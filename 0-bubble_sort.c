@@ -9,21 +9,26 @@
  */
 void bubble_sort(int *array, size_t size)
 {
-	size_t i, step;
+	size_t i, step; 									// O(1)
 
-	for (step = 0; step < size - 1; ++step)
+	if (size == 0 || array == NULL)
+		return;
+	if (size > 2)
 	{
-		for (i = 0; i < size - step - 1; ++i)
+		for (step = 0; step < size - 1; ++step) 		//O(n)
 		{
-			if (array[i] > array[i + 1])
+			for (i = 0; i < size - step - 1; ++i) 		//O(n 2)
 			{
-				int temp = array[i];
+				if (array[i] > array[i + 1]) 			//O(n 2)
+				{
+					int temp = array[i]; 				//O(n 2)
 
-				array[i] = array[i + 1];
+					array[i] = array[i + 1]; 			//O(n 2)
 
-				array[i + 1] = temp;
+					array[i + 1] = temp; 				//O(n 2)
 
-				print_array(array, size);
+					print_array(array, size); 			//O(n 2)
+				}
 			}
 		}
 	}

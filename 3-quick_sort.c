@@ -10,7 +10,6 @@
  */
 
 int partition(int *array, int start, int end, int size)
-
 {
 	int pivot = array[end];
 	int i = start, j, temp;

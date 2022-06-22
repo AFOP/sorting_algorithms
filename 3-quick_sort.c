@@ -9,7 +9,7 @@
  * Return: position of pivot
  */
 
-int partition(int *array, int start, int end, int size)
+int partition(int *array, int start, int end, size_t size)
 {
 	int pivot = array[end];
 	int i = start, j, temp;
@@ -35,7 +35,6 @@ int partition(int *array, int start, int end, int size)
 		array[end] = temp;
 		print_array(array, size);
 	}
-	printf("return i=%d\n", i);
 	return (i);
 }
 
@@ -66,9 +65,8 @@ void quickSort(int *array, int start, int end, size_t size)
  */
 void quick_sort(int *array, size_t size)
 {
-	int end = sizeof(array);
-	int start = array[0];
-	printf("end=%d - start=%d\n", end, start);
+	int end = size - 1;
+	int start = 0;
 
 	quickSort(array, start, end, size);
 }

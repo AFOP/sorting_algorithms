@@ -38,3 +38,25 @@ int partition(int *array, int start, int end, int size)
 	printf("return i=%d\n", i);
 	return (i);
 }
+
+/**
+ * quickSort - quick sorts
+ * @array: array to sort through
+ * @start: start of array
+ * @end: end of array
+ * @size: size of full array
+ */
+
+void quickSort(int *array, int start, int end, int size)
+{
+	int pivot;
+
+	if (start < end)
+	{
+		pivot = partition(array, start, end, size);
+		quickSort(array, start, pivot - 1, size);
+
+		quickSort(array, pivot + 1, end, size);
+	}
+
+}

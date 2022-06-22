@@ -25,7 +25,7 @@ void selection_sort(int *array, size_t size)
 
 	{
 
-		small = i;
+		peq = i;
 
 		for (j = i + 1; j < size; j++)
 
@@ -33,11 +33,11 @@ void selection_sort(int *array, size_t size)
 
 			if (array[j] < array[peq])
 
-				small = j;
+				peq = j;
 
 		}
 
-		if (small != i)
+		if (peq != i)
 
 		{
 
